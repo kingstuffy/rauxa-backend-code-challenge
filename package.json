@@ -75,7 +75,8 @@
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "react-start": "node react-scripts/start.js",
+    "dev": "./node_modules/nodemon/bin/nodemon.js -r dotenv/config app.js",
+    "react-dev": "node react-scripts/start.js",
     "react-build": "node react-scripts/build.js",
     "react-test": "node react-scripts/test.js"
   },
@@ -140,5 +141,9 @@
     "url": "git://github.com/user/rauxa-backend-code-challenge.git"
   },
   "author": "user",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "npm-run-all": "^4.1.5"
+  }
 }
