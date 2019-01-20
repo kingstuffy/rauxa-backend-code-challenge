@@ -79,7 +79,7 @@ class ContactsHome extends Component {
             </div>
           </div>
         </SectionHeader>
-        <div className="contacts">
+        <div className="contacts__home">
           {this.renderContent()}
         </div>
       </div>

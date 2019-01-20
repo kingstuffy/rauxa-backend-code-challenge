@@ -14,7 +14,7 @@ const Contacts = props => (
         component={ContactsHome}
       />
       <Route
-        path={`${props.match.url}/add`}
+        path={'/add'}
         component={CreateContact}
       />
     </Switch>

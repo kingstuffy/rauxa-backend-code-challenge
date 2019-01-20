@@ -30,7 +30,7 @@ class CreateContact extends Component {
 
   back(e) {
     e.preventDefault();
-    this.props.history.push('/contacts');
+    this.props.history.push('');
   }
 
   render() {
@@ -43,15 +43,17 @@ class CreateContact extends Component {
       <div>
         <SectionHeader>
           <div className="row">
-            <div className="col-70">
-              <button className="back-btn" onClick={this.back}>
-                <i className="icon ion-android-arrow-back"/>
-              </button>
+            <div className="col-sm-8">
               <h2 className="page-title">New Contact</h2>
+            </div>
+            <div className="col-sm-4">
+              <button className="back-btn pull-right" onClick={this.back}>
+                <i className="fa fa-long-arrow-left "/>
+              </button>
             </div>
           </div>
         </SectionHeader>
-        <div className="create-contact-container">
+        <div className="contacts__create">
           {
             createStatus.fetching ? (<Loader/>) :
               (

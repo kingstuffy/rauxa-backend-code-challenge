@@ -9,17 +9,6 @@
   float: right;
 }
 
-.back-btn {
-  display: inline-block;
-  margin-right: 8px;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  color: #757575;
-}
-
-.back-btn i {
-  font-size: 25px;
-  position: relative;
-  top: 6px;
+.contacts__content {
+  padding: 50px 20px;
 }
