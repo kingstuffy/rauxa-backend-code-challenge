@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './assets/styles/normalize.css';
 import font from 'font-awesome/css/font-awesome.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = props => (
   <div>

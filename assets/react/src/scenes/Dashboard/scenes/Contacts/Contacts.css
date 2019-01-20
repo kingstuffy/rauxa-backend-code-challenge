@@ -1,25 +1,25 @@
 .page-title {
-    position: relative;
-    top: 6px;
-    color: #393939;
-    font-weight: 400;
+  position: relative;
+  top: 6px;
+  color: #393939;
+  font-weight: 400;
 }
 
 .header .btn.green {
-    float: right;
+  float: right;
 }
 
 .back-btn {
-    display: inline-block;
-    margin-right: 8px;
-    bcontact: 0;
-    background: transparent;
-    box-shadow: none;
-    color: #757575;
+  display: inline-block;
+  margin-right: 8px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #757575;
+}
 
-    i {
-        font-size: 25px;
-        position: relative;
-        top: 6px;
-    }
+.back-btn i {
+  font-size: 25px;
+  position: relative;
+  top: 6px;
 }

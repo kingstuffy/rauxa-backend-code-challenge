@@ -1,0 +1,18 @@
+.contact-list__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  border: 3px solid #212529;
+}
+
+.table th.contact-list__th {
+  border-top: 0;
+}
+
+.contact-list__th--avatar {
+  width: 180px;
+}
+
+.table td.contact-list__td {
+  vertical-align: middle;
+}

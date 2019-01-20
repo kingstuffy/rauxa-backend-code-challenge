@@ -9,13 +9,9 @@ class Dashboard extends Component {
   }
 
   render() {
-    const mainContent = {
-      marginLeft: '120px',
-    };
-
     return (
       <div className="dashboard">
-        <main className="main-content" style={mainContent}>
+        <main className="main-content">
           <div className="content-area">
             {this.props.children}
           </div>

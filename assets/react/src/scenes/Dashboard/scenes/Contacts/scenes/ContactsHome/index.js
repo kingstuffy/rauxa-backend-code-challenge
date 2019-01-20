@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import queryString from 'query-string';
+import { Button } from 'reactstrap';
+
 import { fetchContactsRequest } from '../../../../../../services/contacts/actions';
 import EmptyState from '../../../../components/EmptyState';
 import Loader from '../../../../components/Loader';
@@ -12,7 +14,6 @@ import './ContactsHome.css';
 class ContactsHome extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.loadData = this.loadData.bind(this);
     this.createContact = this.createContact.bind(this);
     this.onPageChange = this.onPageChange.bind(this);
@@ -70,16 +71,11 @@ class ContactsHome extends Component {
       <div>
         <SectionHeader>
           <div className="row">
-            <div className="col-70">
+            <div className="col-sm-8">
               <h2 className="page-title">Contacts</h2>
             </div>
-            <div className="col-30" style={{ paddingRight: 0 }}>
-              <button
-                type="button"
-                onClick={this.createContact}
-              >
-                Create
-              </button>
+            <div className="col-sm-4">
+              <Button color="primary" className="pull-right" onClick={this.createContact}>Add</Button>
             </div>
           </div>
         </SectionHeader>

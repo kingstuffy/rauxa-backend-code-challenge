@@ -14,7 +14,7 @@ const sampleData = {
 
 function* fetchContacts(action) {
   try {
-    yield put(actions.fetchContactsSuccess([sampleData, sampleData,], {}));
+    yield put(actions.fetchContactsSuccess([sampleData, sampleData,sampleData,sampleData, sampleData,], {}));
   } catch (error) {
     if (has(error, 'response.data.message')) {
       yield put(actions.fetchContactsFailure(error.response.data.message));
