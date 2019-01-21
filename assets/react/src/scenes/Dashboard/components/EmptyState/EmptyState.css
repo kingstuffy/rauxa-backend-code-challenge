@@ -1,0 +1,14 @@
+.empty-state {
+    width: 50%;
+    margin: 16% auto 0;
+    text-align: center;
+}
+
+.empty-state h2 {
+    margin-top: 8px;
+    margin-bottom: 16px;
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 0.4px;
+    color: #393939;
+}

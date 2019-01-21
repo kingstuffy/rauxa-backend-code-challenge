@@ -1,0 +1,14 @@
+.page-title {
+  position: relative;
+  top: 6px;
+  color: #393939;
+  font-weight: 400;
+}
+
+.header .btn.green {
+  float: right;
+}
+
+.contacts__content {
+  padding: 50px 20px;
+}

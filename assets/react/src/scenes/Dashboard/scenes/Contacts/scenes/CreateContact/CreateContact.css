@@ -1,0 +1,19 @@
+.contacts__create {
+    padding: 40px 0;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-right: 8px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #222;
+  cursor: pointer;
+}
+
+.back-btn i {
+  font-size: 35px;
+  position: relative;
+  top: 6px;
+}
