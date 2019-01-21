@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import has from 'lodash/has';
 import { reset } from 'redux-form';
-import { Button } from 'reactstrap';
 import { createContactRequest } from '../../../../../../services/contacts/actions';
 import Loader from '../../../../components/Loader';
 import SectionHeader from '../../../../components/SectionHeader';
@@ -14,18 +12,23 @@ class CreateContact extends Component {
   constructor(props) {
     super(props);
     this.back = this.back.bind(this);
-    this.onFormChange = this.onFormChange.bind(this);
+    this.submit = this.submit.bind(this);
   }
 
-  onFormChange(e) {
-    if (e.target.name && has(this.props.errors, e.target.name)) {
-      // this.props.removeFieldError(e.target.name);
+  componentWillMount() {
+    if (this.props.createStatus.ok) {
+      this.props.history.push('');
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.createStatus.ok) {
+      nextProps.history.push('');
     }
   }
 
   submit(contactPayload) {
-    console.log(contactPayload);
-    // this.props.createContactRequest(contactPayload);
+    this.props.createContactRequest(contactPayload);
   }
 
   back(e) {
@@ -36,7 +39,6 @@ class CreateContact extends Component {
   render() {
     const {
       createStatus,
-      errors,
     } = this.props;
 
     return (
@@ -57,7 +59,7 @@ class CreateContact extends Component {
           {
             createStatus.fetching ? (<Loader/>) :
               (
-                <ContactForm onSubmit={this.submit}/>
+                <ContactForm onSubmit={this.submit} {...this.props}/>
               )
           }
         </div>
@@ -70,6 +72,7 @@ const mapStateToProps = (state) => {
   return {
     createStatus: state.app.contacts.contacts.createStatus,
     errors: state.app.contacts.contacts.messages,
+    message: state.app.contacts.contacts.message,
   };
 };
 
@@ -88,6 +91,7 @@ CreateContact.defaultProps = {
 
 CreateContact.propTypes = {
   createStatus: PropTypes.shape({}),
+  message: PropTypes.string,
   createContactRequest: PropTypes.func,
   errors: PropTypes.shape({}),
   history: PropTypes.shape({
