@@ -11,7 +11,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'https://github.com/kingstuffy/rauxa-backend-code-challenge.git',
       path: '/home/ubuntu/rauxa-backend-code-challenge',
-      'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
+      'post-deploy': 'source .env && npm install && pm2 startOrRestart ecosystem.config.js'
     }
   }
 };
