@@ -94,7 +94,9 @@
     "dev": "./node_modules/nodemon/bin/nodemon.js -r dotenv/config app.js",
     "react-dev": "node react-scripts/start.js",
     "react-build": "node react-scripts/build.js",
-    "test": "NODE_ENV=test nyc mocha"
+    "test": "NODE_ENV=test nyc mocha",
+    "restart": "pm2 startOrRestart ecosystem.config.js",
+    "deploy": "pm2 deploy ecosystem.config.js production"
   },
   "main": "app.js",
   "repository": {
