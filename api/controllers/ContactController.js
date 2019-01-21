@@ -8,10 +8,10 @@ const pager = require('sails-pager');
  */
 module.exports = {
   list: function (req, res) {
-    const perPage = req.query.per_page || 20;
+    const perPage = req.query.perPage || 20;
     const page = req.query.page || 1;
-    const sortBy = req.query.sort_by || 'createdAt';
-    const sortDir = req.query.sort_dir || 'ASC';
+    const sortBy = req.query.sortBy || 'createdAt';
+    const sortDir = req.query.sortDir || 'DESC';
     const sort = sortBy + ' ' + sortDir.toUpperCase();
 
     pager.paginate(Contact, {}, page, perPage, null, sort)
