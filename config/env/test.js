@@ -1,7 +1,7 @@
 /**
- * Production environment settings
+ * Test environment settings
  *
- * This file can include shared settings for a production environment,
+ * This file can include shared settings for a staging team,
  * such as API keys or remote database passwords.  If you're using
  * a version control solution for your Sails app, this file will
  * be committed to your repository unless you add it to your .gitignore
@@ -11,13 +11,14 @@
  */
 
 module.exports = {
-  connections: {
-    mysql: {
-      adapter: 'sails-mysql',
-      url: process.env.DB_URL
-    }
-  },
-  models: {
-    connection: 'mysql'
-  },
+    port: process.env.PORT || 2001,
+    connections: {
+        testDB: {
+            adapter: 'sails-memory'
+        },
+    },
+    models: {
+        connection: 'testDB',
+        migrate: 'drop'
+    },
 };
