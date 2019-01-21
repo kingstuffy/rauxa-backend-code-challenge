@@ -8,7 +8,7 @@
 
 module.exports = {
   attributes: {
-    type: {
+    name: {
       type: 'string',
       required: true
     },
@@ -25,5 +25,6 @@ module.exports = {
       required: true
     },
   },
+  tableName: 'contacts'
 };
 
