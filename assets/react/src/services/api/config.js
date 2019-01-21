@@ -1,3 +1,5 @@
 export default {
-  url: process.env.REACT_APP_API_URL,
+  createUrl: process.env.REACT_APP_API_CREATE_URL,
+  listUrl: process.env.REACT_APP_API_LIST_URL,
 };
+

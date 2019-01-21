@@ -1,10 +1,10 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import api from '../api';
 import has from 'lodash/has';
 import { reset } from 'redux-form';
-import { loadState } from '../../localStorage';
 import * as actions from './actions';
 import * as types from './constants';
+import axios from "axios/index";
+import apiConfig from "../api/config";
 
 const sampleData = {
   name: 'John Doe',
@@ -14,7 +14,16 @@ const sampleData = {
 
 function* fetchContacts(action) {
   try {
-    yield put(actions.fetchContactsSuccess([sampleData, sampleData,sampleData,sampleData, sampleData,], {}));
+    const config = {
+      baseURL: apiConfig.listUrl,
+      method: 'get',
+      url: '/contact',
+      params: {
+        page: action.page,
+      },
+    };
+    const response = yield call(axios.request, config);
+    yield put(actions.fetchContactsSuccess(response.data.data, response.data.meta));
   } catch (error) {
     if (has(error, 'response.data.message')) {
       yield put(actions.fetchContactsFailure(error.response.data.message));
