@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Alert } from 'reactstrap';
 import './ContactForm.css';
 
 
@@ -23,10 +23,16 @@ const FileInput = ({
 
 
 let ContactForm = props => {
-  const { handleSubmit } = props;
+  const { handleSubmit, createStatus, message } = props;
 
   return (
     <Form onSubmit={handleSubmit} className="contact-form">
+      {
+        createStatus.error ?
+          (<Alert color="danger">
+            {message}
+          </Alert>) : ''
+      }
       <FormGroup>
         <Label for="name">Name</Label>
         <Field name="name" component="input" type="text" className="form-control"/>
