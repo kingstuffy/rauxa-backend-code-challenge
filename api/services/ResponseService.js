@@ -16,6 +16,7 @@ module.exports = {
     return res.status(status).json(response);
   },
   error(err, res) {
+    console.log(err);
     let response = {
       message: 'Validation error has occured',
     };
